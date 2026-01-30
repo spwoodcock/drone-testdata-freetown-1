@@ -21,10 +21,10 @@ View the AOI on a map [here](./aoi.geojson).
 ## Imagery Source
 
 DroneTM project:
-- `images/task-nw`: https://dronetm.org/projects/263e1c16-7fa8-475c-8b19-f059968d4817/tasks/88bccae3-7271-42a1-8c9c-7825dac50131
-- `images/task-ne`: https://dronetm.org/projects/263e1c16-7fa8-475c-8b19-f059968d4817/tasks/872fa25c-938a-424f-aab3-8ead09f5cd0f
-- `images/task-sw`: https://dronetm.org/projects/263e1c16-7fa8-475c-8b19-f059968d4817/tasks/5a7cc6cc-2ea6-4e06-aa2a-9b7a8fe6094f
-- `images/task-se`: https://dronetm.org/projects/263e1c16-7fa8-475c-8b19-f059968d4817/tasks/243acb02-65e7-4cf2-a6b3-29416bf68596
+- `images/task-29`: https://dronetm.org/projects/263e1c16-7fa8-475c-8b19-f059968d4817/tasks/88bccae3-7271-42a1-8c9c-7825dac50131
+- `images/task-28`: https://dronetm.org/projects/263e1c16-7fa8-475c-8b19-f059968d4817/tasks/872fa25c-938a-424f-aab3-8ead09f5cd0f
+- `images/task-36`: https://dronetm.org/projects/263e1c16-7fa8-475c-8b19-f059968d4817/tasks/5a7cc6cc-2ea6-4e06-aa2a-9b7a8fe6094f
+- `images/task-35`: https://dronetm.org/projects/263e1c16-7fa8-475c-8b19-f059968d4817/tasks/243acb02-65e7-4cf2-a6b3-29416bf68596
 
 ## Flight Tails
 
@@ -36,6 +36,21 @@ DroneTM project:
 - These flight tails messed with the processing in ODM, so we decided
   to implement logic to identify and remove them automatically.
 - This dataset is primarily for testing the removal functionality.
+
+## Simulating Flight Gaps
+
+- The imagery in this dataset is complete.
+- However, for testing to identify gaps in the flight (i.e. missed
+  areas that imagery did not cover), running the following script
+  will delete some chunks for the imagery:
+- The resulting coverage will contain gaps.
+
+```bash
+# Warning! This will delete photos from the downloaded imagery.
+# To recover them, simply run the rclone command again.
+
+bash generate-flight-gaps.sh
+```
 
 ## Example Image
 
